@@ -12,11 +12,16 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use Illuminate\Support\Facades\Route;
+use Mcamara\LaravelLocalization\LaravelLocalization;
 
     /** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
-        Route::prefix('dashboard')->name('dashboard.')->group(function(){
-            Route::get('/index' ,'DashboardController@index')->name('index');
+Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]], function(){
 
+            Route::prefix('dashboard')->name('dashboard.')->group(function(){
+                Route::get('/index' ,'DashboardController@index')->name('index');
 
-    });
+                });
+});
+
 
