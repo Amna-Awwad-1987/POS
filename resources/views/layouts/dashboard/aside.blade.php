@@ -41,25 +41,6 @@
                 <!-- User Profile-->
                 <li class="nav-small-cap">
                     <i class="mdi mdi-dots-horizontal"></i>
-                    <span class="hide-menu">Personal</span>
-                </li>
-                <li class="sidebar-item">
-                    <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                        <i class="icon-Car-Wheel"></i>
-                        <span class="hide-menu">Dashboards </span>
-                    </a>
-                    <ul aria-expanded="false" class="collapse  first-level">
-                        <li class="sidebar-item">
-                            <a href="index.html" class="sidebar-link">
-                                <i class="icon-Record"></i>
-                                <span class="hide-menu"> Dashboard 1 </span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li class="nav-small-cap">
-                    <i class="mdi mdi-dots-horizontal"></i>
                     <span class="hide-menu">{{__('site.dashboard')}}</span>
                 </li>
 

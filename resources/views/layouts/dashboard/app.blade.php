@@ -12,13 +12,12 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{url('dashboard/img/favicon.png')}}">
     <title>AdminBite admin Template - The Ultimate Multipurpose admin template</title>
     <!-- Custom CSS -->
-    <link href="{{asset('/dashboard/css/flag-icon.min.css')}}" rel="stylesheet">
 
-    <link href="{{asset('/dashboard/css/chartist.min.css')}}" rel="stylesheet">
-    <link href="{{asset('/dashboard/css/c3.min.css')}}" rel="stylesheet">
-    <link href="{{asset('/dashboard/css/morris.css')}}" rel="stylesheet">
+    <link href="{{asset('dashboard/css/chartist.min.css')}}" rel="stylesheet">
+    <link href="{{asset('dashboard/css/c3.min.css')}}" rel="stylesheet">
+    <link href="{{asset('dashboard/css/morris.css')}}" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="{{asset('/dashboard/css/style.min.css')}}" rel="stylesheet">
+    <link href="{{asset('dashboard/css/style.min.css')}}" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -896,35 +895,35 @@
 <!-- ============================================================== -->
 <!-- All Jquery -->
 <!-- ============================================================== -->
-<script src="{{asset('/dashboard/js/jquery.min.js')}}"></script>
+<script src="{{asset('dashboard/js/jquery.min.js')}}"></script>
 <!-- Bootstrap tether Core JavaScript -->
-<script src="{{asset('/dashboard/js/popper.min.js')}}"></script>
-<script src="{{asset('/dashboard/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('dashboard/js/popper.min.js')}}"></script>
+<script src="{{asset('dashboard/js/bootstrap.min.js')}}"></script>
 <!-- apps -->
-<script src="{{asset('/dashboard/js/app.min.js')}}"></script>
-<script src="{{asset('/dashboard/js/app.init.js')}}"></script>
-<script src="{{asset('/dashboard/js/app-style-switcher.js')}}"></script>
+<script src="{{asset('dashboard/js/app.min.js')}}"></script>
+<script src="{{asset('dashboard/js/app.init.js')}}"></script>
+<script src="{{asset('dashboard/js/app-style-switcher.js')}}"></script>
 <!-- slimscrollbar scrollbar JavaScript -->
-<script src="{{asset('/dashboard/js/perfect-scrollbar.jquery.min.js')}}"></script>
-<script src="{{asset('/dashboard/js/sparkline.js')}}"></script>
+<script src="{{asset('dashboard/js/perfect-scrollbar.jquery.min.js')}}"></script>
+<script src="{{asset('dashboard/js/sparkline.js')}}"></script>
 <!--Wave Effects -->
-<script src="{{asset('/dashboard/js/waves.js')}}"></script>
+<script src="{{asset('dashboard/js/waves.js')}}"></script>
 <!--Menu sidebar -->
-<script src="{{asset('/dashboard/js/sidebarmenu.js')}}"></script>
+<script src="{{asset('dashboard/js/sidebarmenu.js')}}"></script>
 <!--Custom JavaScript -->
-<script src="{{asset('/dashboard/js/custom.min.js')}}"></script>
+<script src="{{asset('dashboard/js/custom.min.js')}}"></script>
 <!--This page JavaScript -->
 <!--chartis chart-->
-<script src="{{asset('/dashboard/js/chartist.min.js')}}"></script>
-<script src="{{asset('/dashboard/js/chartist-plugin-tooltip.min.js')}}"></script>
+<script src="{{asset('dashboard/js/chartist.min.js')}}"></script>
+<script src="{{asset('dashboard/js/chartist-plugin-tooltip.min.js')}}"></script>
 <!--c3 charts -->
-<script src="{{asset('/dashboard/js/d3.min.js')}}"></script>
-<script src="{{asset('/dashboard/js/c3.min.js')}}"></script>
+<script src="{{asset('dashboard/js/d3.min.js')}}"></script>
+<script src="{{asset('dashboard/js/c3.min.js')}}"></script>
 <!--chartjs -->
-<script src="{{asset('/dashboard/js/raphael.min.js')}}"></script>
-<script src="{{asset('/dashboard/js/morris.min.js')}}"></script>
+<script src="{{asset('dashboard/js/raphael.min.js')}}"></script>
+<script src="{{asset('dashboard/js/morris.min.js')}}"></script>
 
-<script src="{{asset('/dashboard/js/dashboard1.js')}}"></script>
+<script src="{{asset('dashboard/js/dashboard1.js')}}"></script>
 </body>
 
 </html>
