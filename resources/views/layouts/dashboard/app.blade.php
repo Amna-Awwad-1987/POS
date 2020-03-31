@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html @if(app()->getLocale() == 'ar') dir="rtl" @endif lang="en">
+<html dir="{{ LaravelLocalization::getCurrentLocaleDirection() }}"  lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -52,7 +52,7 @@
     <!-- Topbar header - style you can find in pages.scss -->
     <!-- ============================================================== -->
     <header class="topbar">
-        <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+        <li class="navbar top-navbar navbar-expand-md navbar-dark">
             <div class="navbar-header">
                 <!-- This is for the sidebar toggle which is visible on mobile only -->
                 <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)">
@@ -430,14 +430,17 @@
                             <i class="flag-icon flag-icon-us font-18"></i>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right  animated bounceInDown" aria-labelledby="navbarDropdown2">
-                            <a class="dropdown-item" href="#">
-                                <i class="flag-icon flag-icon-us"></i> English</a>
-                            <a class="dropdown-item" href="#">
-                                <i class="flag-icon flag-icon-fr"></i> French</a>
-                            <a class="dropdown-item" href="#">
-                                <i class="flag-icon flag-icon-es"></i> Spanish</a>
-                            <a class="dropdown-item" href="#">
-                                <i class="flag-icon flag-icon-de"></i> German</a>
+                            <ul>
+                                @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                                   @if($localeCode != app()->getLocale() )
+                                    <li>
+                                        <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                            {{ $properties['native'] }}
+                                        </a>
+                                    </li>
+                                    @endif
+                                @endforeach
+                            </ul>
                         </div>
                     </li>
 

@@ -41,7 +41,11 @@
                 <!-- User Profile-->
                 <li class="nav-small-cap">
                     <i class="mdi mdi-dots-horizontal"></i>
-                    <span class="hide-menu">{{__('site.dashboard')}}</span>
+                    <h4 class="hide-menu">{{__('site.dashboard')}}</h4>
+                </li>
+                <li class="nav-small-cap">
+                    <i class="mdi mdi-dots-horizontal"></i>
+                    <h4 class="hide-menu">{{__('site.users')}}</h4>
                 </li>
 
             </ul>
