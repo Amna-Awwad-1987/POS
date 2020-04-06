@@ -1,7 +1,16 @@
 @extends('layouts.dashboard.app')
-@section('title','Admin Dashboard')
+@section('title')
+    {{__('site.dashboard')}}
+@endsection
 @section('content')
 
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-5 align-self-center">
+                <h4 class="page-title">{{__('site.dashboard')}}</h4>
+            </div>
+        </div>
+    </div>
     <div class="container-fluid">
         <!-- ============================================================== -->
         <!-- Info box -->
@@ -142,9 +151,9 @@
                         <div class="d-flex align-items-center">
 
                             <div>
-                                        <span class="btn-circle btn-lg btn btn-outline-secondary">
-                                            <i class="wi wi-day-sunny"></i>
-                                        </span>
+                                <span class="btn-circle btn-lg btn btn-outline-secondary">
+                                    <i class="wi wi-day-sunny"></i>
+                                </span>
                             </div>
                             <div class="m-l-10">
                                 <h4 class="m-b-0">Monday</h4>

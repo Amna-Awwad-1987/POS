@@ -29,7 +29,7 @@ return [
         'array'   => 'يجب أن يحتوي :attribute على عدد من العناصر بين :min و :max.',
     ],
     'boolean'        => 'يجب أن تكون قيمة :attribute إما true أو false .',
-    'confirmed'      => 'حقل التأكيد غير مُطابق للحقل :attribute.',
+    'confirmed'      => 'حقل التأكيد غير مُطابق لحقل :attribute.',
     'date'           => ':attribute ليس تاريخًا صحيحًا.',
     'date_equals'    => 'يجب أن يكون :attribute مطابقاً للتاريخ :date.',
     'date_format'    => 'لا يتوافق :attribute مع الشكل :format.',
@@ -175,5 +175,7 @@ return [
         'time'                  => 'الوقت',
         'available'             => 'مُتاح',
         'size'                  => 'الحجم',
+        'image'                  => 'صورة',
+        'permissions'              =>'الأذونات'
     ],
 ];

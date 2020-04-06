@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html dir="{{ LaravelLocalization::getCurrentLocaleDirection() }}"  lang="en">
+<html dir="{{ LaravelLocalization::getCurrentLocaleDirection() }}" lang="en" xmlns="http://www.w3.org/1999/html">
 
 <head>
     <meta charset="utf-8">
@@ -10,20 +10,21 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{url('dashboard/img/favicon.png')}}">
-    <title>AdminBite admin Template - The Ultimate Multipurpose admin template</title>
+    <title>@yield('title')</title>
     <!-- Custom CSS -->
-
+{{--    <link href="{{asset('dashboard/css/bootstrap.min.css')}}" rel="stylesheet">--}}
     <link href="{{asset('dashboard/css/chartist.min.css')}}" rel="stylesheet">
     <link href="{{asset('dashboard/css/c3.min.css')}}" rel="stylesheet">
     <link href="{{asset('dashboard/css/morris.css')}}" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="{{asset('dashboard/css/style.min.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('dashboard/css/noty.css')}}">
+    <script src="{{asset('dashboard/js/noty.min.js')}}"></script>;
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-
     @if(app()->getLocale() == 'ar')
         <link href="https://fonts.googleapis.com/css?family=Cairo:400,700" rel="stylesheet">
         <style>
@@ -32,6 +33,8 @@
             }
         </style>
     @endif
+    @yield('cssHeader')
+
 </head>
 
 <body>
@@ -51,8 +54,8 @@
     <!-- ============================================================== -->
     <!-- Topbar header - style you can find in pages.scss -->
     <!-- ============================================================== -->
-    <header class="topbar">
-        <li class="navbar top-navbar navbar-expand-md navbar-dark">
+    <header class="topbar p-0">
+        <nav class="navbar top-navbar navbar-expand-md navbar-dark " style="padding-top: 0px">
             <div class="navbar-header">
                 <!-- This is for the sidebar toggle which is visible on mobile only -->
                 <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)">
@@ -61,7 +64,7 @@
                 <!-- ============================================================== -->
                 <!-- Logo -->
                 <!-- ============================================================== -->
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="#">
                     <!-- Logo icon -->
                     <b class="logo-icon">
                         <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
@@ -104,147 +107,12 @@
                         </a>
                     </li>
                     <!-- ============================================================== -->
-                    <!-- mega menu -->
-                    <!-- ============================================================== -->
-                    <li class="nav-item dropdown mega-dropdown">
-                        <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="ti-gift font-20"></i>
-                        </a>
-                        <div class="dropdown-menu animated bounceInDown">
-                            <div class="mega-dropdown-menu row">
-                                <div class="col-lg-3 col-xlg-2 m-b-30">
-                                    <h5 class="m-b-20">Carousel</h5>
-                                    <!-- CAROUSEL -->
-                                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                                        <div class="carousel-inner" role="listbox">
-                                            <div class="carousel-item active">
-                                                <div class="container p-0">
-                                                    <img class="d-block img-fluid" src="{{url('dashboard/img/img1.jpg')}}" alt="First slide">
-                                                </div>
-                                            </div>
-                                            <div class="carousel-item">
-                                                <div class="container p-0">
-                                                    <img class="d-block img-fluid" src="{{url('dashboard/img/img2.jpg')}}" alt="Second slide">
-                                                </div>
-                                            </div>
-                                            <div class="carousel-item">
-                                                <div class="container p-0">
-                                                    <img class="d-block img-fluid" src="{{url('dashboard/img/img3.jpg')}}" alt="Third slide">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                            <span class="sr-only">Previous</span>
-                                        </a>
-                                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                            <span class="sr-only">Next</span>
-                                        </a>
-                                    </div>
-                                    <!-- End CAROUSEL -->
-                                </div>
-                                <div class="col-lg-3 m-b-30">
-                                    <h5 class="m-b-20">Accordion</h5>
-                                    <!-- Accordian -->
-                                    <div id="accordion">
-                                        <div class="card m-b-5">
-                                            <div class="card-header" id="headingOne">
-                                                <h5 class="mb-0">
-                                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                        Collapsible Group Item #1
-                                                    </button>
-                                                </h5>
-                                            </div>
-                                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                                                <div class="card-body">
-                                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry.
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card m-b-5">
-                                            <div class="card-header" id="headingTwo">
-                                                <h5 class="mb-0">
-                                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                        Collapsible Group Item #2
-                                                    </button>
-                                                </h5>
-                                            </div>
-                                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                                                <div class="card-body">
-                                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry.
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card m-b-5">
-                                            <div class="card-header" id="headingThree">
-                                                <h5 class="mb-0">
-                                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                                        Collapsible Group Item #3
-                                                    </button>
-                                                </h5>
-                                            </div>
-                                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                                                <div class="card-body">
-                                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry.
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3  m-b-30">
-                                    <h5 class="m-b-20">Contact Us</h5>
-                                    <!-- Contact -->
-                                    <form>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="exampleInputname1" placeholder="Enter Name"> </div>
-                                        <div class="form-group">
-                                            <input type="email" class="form-control" placeholder="Enter email"> </div>
-                                        <div class="form-group">
-                                            <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Message"></textarea>
-                                        </div>
-                                        <button type="submit" class="btn btn-info">Submit</button>
-                                    </form>
-                                </div>
-                                <div class="col-lg-3 col-xlg-4 m-b-30">
-                                    <h5 class="m-b-20">List style</h5>
-                                    <!-- List style -->
-                                    <ul class="list-style-none">
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <i class="fa fa-check text-success"></i> You can give link</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <i class="fa fa-check text-success"></i> Give link</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <i class="fa fa-check text-success"></i> Another Give link</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <i class="fa fa-check text-success"></i> Forth link</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                <i class="fa fa-check text-success"></i> Another fifth link</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <!-- ============================================================== -->
-                    <!-- End mega menu -->
-                    <!-- ============================================================== -->
                     <!-- ============================================================== -->
                     <!-- Comment -->
                     <!-- ============================================================== -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="ti-bell font-20"></i>
-
                         </a>
                         <div class="dropdown-menu mailbox animated bounceInDown">
                                 <span class="with-arrow">
@@ -323,7 +191,6 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="font-20 ti-email"></i>
-
                         </a>
                         <div class="dropdown-menu mailbox animated bounceInDown" aria-labelledby="2">
                                 <span class="with-arrow">
@@ -427,7 +294,11 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true"
                            aria-expanded="false">
-                            <i class="flag-icon flag-icon-us font-18"></i>
+                            @if(app()->getLocale() == 'ar')
+                                <i class="flag-icon flag-icon-us font-18"></i>
+                            @else
+                                <i class="flag-icon flag-icon-sa font-18"></i>
+                            @endif
                         </a>
                         <div class="dropdown-menu dropdown-menu-right  animated bounceInDown" aria-labelledby="navbarDropdown2">
                             <ul>
@@ -461,8 +332,8 @@
                                     <img src="{{url('dashboard/img/1.jpg')}}" alt="user" class="img-circle" width="60">
                                 </div>
                                 <div class="m-l-10">
-                                    <h4 class="m-b-0">Steave Jobs</h4>
-                                    <p class=" m-b-0">varun@gmail.com</p>
+                                    <h4 class="m-b-0">{{auth()->user()->first_name}} {{auth()->user()->last_name}}</h4>
+                                    <p class=" m-b-0">{{auth()->user()->email}}</p>
                                 </div>
                             </div>
                             <a class="dropdown-item" href="javascript:void(0)">
@@ -475,8 +346,14 @@
                             <a class="dropdown-item" href="javascript:void(0)">
                                 <i class="ti-settings m-r-5 m-l-5"></i> Account Setting</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="javascript:void(0)">
-                                <i class="fa fa-power-off m-r-5 m-l-5"></i> Logout</a>
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                <i class="fa fa-power-off m-r-5 m-l-5"></i>{{ __('Logout') }}
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
                             <div class="dropdown-divider"></div>
                             <div class="p-l-30 p-10">
                                 <a href="javascript:void(0)" class="btn btn-sm btn-success btn-rounded">View Profile</a>
@@ -505,39 +382,11 @@
     <!-- ============================================================== -->
     <div class="page-wrapper">
         <!-- ============================================================== -->
-        <!-- Bread crumb and right sidebar toggle -->
-        <!-- ============================================================== -->
-        <div class="page-breadcrumb">
-            <div class="row">
-                <div class="col-5 align-self-center">
-                    <h4 class="page-title">Dashboard</h4>
-                    <div class="d-flex align-items-center">
-
-                    </div>
-                </div>
-                <div class="col-7 align-self-center">
-                    <div class="d-flex no-block justify-content-end align-items-center">
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item">
-                                    <a href="#">Home</a>
-                                </li>
-                                <li class="breadcrumb-item active" aria-current="page">Library</li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- ============================================================== -->
-        <!-- End Bread crumb and right sidebar toggle -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
         <!-- Container fluid  -->
-        <!-- ============================================================== -->
+    <!-- ============================================================== -->
         @yield('content')
-        @include('partial.errors')
-        <!-- ============================================================== -->
+        @include('partial.session')
+    <!-- ============================================================== -->
         <!-- End Container fluid  -->
         <!-- ============================================================== -->
         <!-- ============================================================== -->
@@ -927,6 +776,16 @@
 <script src="{{asset('dashboard/js/morris.min.js')}}"></script>
 
 <script src="{{asset('dashboard/js/dashboard1.js')}}"></script>
+
+<script>
+    $('input[type="checkbox"].minimal, input[type= "radio"].minimal').iCheck({
+       checkboxClass: 'icheckbox_minimal-blue',
+       radioClass: 'iradio_minimal-blue'
+    });
+</script>
+
+@include('sweetalert::alert')
+@yield('jsFooter')
 </body>
 
 </html>

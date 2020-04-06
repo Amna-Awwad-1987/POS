@@ -18,9 +18,9 @@ use Illuminate\Support\Facades\Route;
     /** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
 Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]], function(){
 
-            Route::prefix('dashboard')->name('dashboard.')->group(function(){
+            Route::prefix('dashboard')->name('dashboard.')->middleware('auth')->group(function(){
                 Route::get('/index' ,'DashboardController@index')->name('index');
-                Route::get('/index' ,'DashboardController@index')->name('index');
+                Route::resource('users' ,'UserController')->except('show');
 
                 });
 });

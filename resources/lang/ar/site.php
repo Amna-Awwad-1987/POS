@@ -12,10 +12,33 @@ return [
     |
     */
 
-    'dashboard'   => 'الرئيسة',
+    'dashboard'   => 'الرئيسية',
     'users'   => 'المشرفيين',
-    'first_name' => 'الاسم الاول',
+    'no_data_found' => 'للأسف لا يوجد أي سجلات',
+    'add' => 'أضف',
+    'edit' => 'تعديل',
+    'delete' => 'حذف',
+    'confirm_delete' => 'هل تريد تأكيد الحذف',
+    'update' => 'تحديث',
+    'create' => 'إضافة',
+    'read' => 'عرض',
+    'search' => 'بحث',
+    'action' => 'الحدث',
+    'yes' => 'نعم',
+    'no' => 'لا',
+    'first_name' => 'الإسم الأول',
     'last_name' => 'اسم العائلة',
-    'email' => 'الايميل',
-    'password' => 'كلمة المرور'
+    'email' => 'البريد الإلكتروني',
+    'image' => 'صورة',
+    'password' => 'كلمة المرور',
+    'password_confirmation' => 'تأكيد كلمة المرور',
+    'added_successfully' => 'تم إضافة البيانات بنجاح',
+    'updated_successfully' => 'تم تحديث البيانات بنجاح',
+    'deleted_successfully' => 'تم حذف البيانات بنجاح',
+    'success_job' => 'أحسنت صنعا',
+    'add_new_user' => 'إضافة مشرف جديد',
+    'edit_user' => 'تعديل بيانات مشرف',
+    'submit' => 'إرسال',
+    'permissions' => 'الأذونات',
+
 ];

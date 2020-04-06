@@ -225,12 +225,13 @@ return [
          * Method to be called in the middleware return case.
          * Available: abort|redirect
          */
-        'handling' => 'abort',
+        'handling' => 'redirect',
 
         /**
          * Handlers for the unauthorized method in the middlewares.
          * The name of the handler must be the same as the handling.
          */
+
         'handlers' => [
             /**
              * Aborts the execution with a 403 code and allows you to provide the response text
@@ -246,7 +247,7 @@ return [
              * If the message content is empty it won't be added to the redirection.
              */
             'redirect' => [
-                'url' => '/home',
+                'url' => '/404-error',
                 'message' => [
                     'key' => 'error',
                     'content' => ''
