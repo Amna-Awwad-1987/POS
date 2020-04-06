@@ -4,6 +4,8 @@ return [
     'role_structure' => [
         'super_admin' => [
             'users' => 'c,r,e,d',
+            'categories' => 'c,r,e,d',
+
         ],
         'admin' => [],
     ],
@@ -11,6 +13,6 @@ return [
         'c' => 'create',
         'r' => 'read',
         'e' => 'edit',
-        'd' => 'delete'
+        'd' => 'delete',
     ]
 ];

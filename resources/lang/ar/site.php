@@ -40,5 +40,8 @@ return [
     'edit_user' => 'تعديل بيانات مشرف',
     'submit' => 'إرسال',
     'permissions' => 'الأذونات',
-
+    'categories' => 'الأقسام',
+    'add_new_category' => 'إضافة قسم جديد',
+    'edit_category' => 'تعديل بيانات قسم',
+    'name' => 'الاسم',
 ];

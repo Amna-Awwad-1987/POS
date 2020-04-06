@@ -37,8 +37,6 @@
                                 <a class="dropdown-item" href="javascript:void(0)">
                                     <i class="ti-settings m-r-5 m-l-5"></i> Account Setting</a>
                                 <div class="dropdown-divider"></div>
-{{--                                <a class="dropdown-item" href="javascript:void(0)">--}}
-{{--                                    <i class="fa fa-power-off m-r-5 m-l-5"></i> Logout</a>--}}
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -59,6 +57,11 @@
                     <li class="nav-small-cap"><a href="{{route('dashboard.users.index')}}"><i class="mdi mdi-dots-horizontal"></i><span class="hide-menu font-18">{{__('site.users')}}</span></a>
                     </li>
                 @endif
+                @if(auth()->user()->hasPermission('read_categories'))
+                <li class="nav-small-cap"><a href="{{route('dashboard.categories.index')}}"><i class="mdi mdi-dots-horizontal"></i><span class="hide-menu font-18">{{__('site.categories')}}</span></a>
+                </li>
+                @endif
+
             </ul>
         </nav>
         <!-- End Sidebar navigation -->

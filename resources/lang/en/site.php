@@ -38,6 +38,10 @@ return [
     'edit_user' => 'Edit User Data',
     'submit' => 'Submit',
     'permissions' => 'Permissions',
+    'categories' => 'Categories',
+    'add_new_category' => 'Add A New Category',
+    'edit_category' => 'Edit Category Data',
+    'name' => 'Name',
 
 
 ];
