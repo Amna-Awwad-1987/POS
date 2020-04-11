@@ -81,13 +81,11 @@ class UserController extends Controller
         }
 
 
-//        dd($request_data['image']);
         $user = User::create($request_data);
         $user->attachRole('admin');
         $user->syncPermissions($request->permissions);
 
         alert()->success(__('site.success_job'),__('site.added_successfully'));
-//        session()->flash('success',__('site.added_successfully'));
         return redirect('/dashboard/users');
 
     }

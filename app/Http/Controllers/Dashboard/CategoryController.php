@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Category;
+use App\CategoryTranslation;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -20,8 +21,10 @@ class CategoryController extends Controller
      */
     public function index(Request $request)
     {
-        $categories = Category::when($request->search, function($query) use($request){
-                return $query->where('name', 'like', '%'. $request->search . '%');
+        $locale =  app()->getLocale();
+        $categories = Category::when($request->search, function($query) use($request ){
+
+            return $query->whereTranslationLike( 'name', '%'. $request->search . '%');
             })->latest()->paginate(4);
 
        return view('dashboard.categories.index', compact('categories'));
@@ -45,16 +48,17 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(),[
-            'name' => ['required','unique:categories'],
-//            'image' => ['image'],
-        ]);
-        if ($validator->fails()) {
+        $rules = [];
+        foreach (config('translatable.locales') as $locale){
+            $rules += [ $locale . '.name'=> ['required' ,Rule::unique('category_translations', 'name')]];
+        }
 
+        $validator = Validator::make($request->all(), $rules);
+
+        if ($validator->fails()) {
             return Redirect::back()->withInput()->withErrors($validator->errors()->getMessages());
         }
 
-//        dd($request_data);
         $category = Category::create($request->all());
         alert()->success(__('site.success_job'),__('site.added_successfully'));
         return redirect('/dashboard/categories');
@@ -69,7 +73,8 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        //
+
+
     }
 
     /**
@@ -93,15 +98,17 @@ class CategoryController extends Controller
     public function update(Request $request, $id )
     {
         $category = Category::find($id);
-//        dd($request->all() , $category);
-        $validator = Validator::make($request->all(),[
-            'name' => ['required', Rule::unique('categories')->ignore($category->id),],
-//            'image' => ['image'],
-        ]);
-        if ($validator->fails()) {
 
+        $rules = [];
+        foreach (config('translatable.locales') as $locale){
+           $rules += [$locale . '.name'=> ['required', Rule::unique('category_translations', 'name')->ignore($category->id , 'category_id')]];
+        }
+        $validator = Validator::make($request->all(), $rules);
+
+        if ($validator->fails()) {
             return Redirect::back()->withInput()->withErrors($validator->errors()->getMessages());
         }
+
         $category->update($request->all());
         alert()->success(__('site.success_job'),__('site.updated_successfully'));
         return redirect('/dashboard/categories');

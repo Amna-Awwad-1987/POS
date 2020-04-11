@@ -5,6 +5,7 @@ return [
         'super_admin' => [
             'users' => 'c,r,e,d',
             'categories' => 'c,r,e,d',
+            'products' => 'c,r,e,d',
 
         ],
         'admin' => [],

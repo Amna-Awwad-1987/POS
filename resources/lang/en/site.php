@@ -39,9 +39,33 @@ return [
     'submit' => 'Submit',
     'permissions' => 'Permissions',
     'categories' => 'Categories',
+    'category' => 'Category',
     'add_new_category' => 'Add A New Category',
     'edit_category' => 'Edit Category Data',
     'name' => 'Name',
+    'products' => 'Products',
+    'products_count' => 'Products Count',
+    'related_products' => 'Related Products',
+    'add_new_product' => 'Add New Product',
+    'edit_product' => 'Edit Product',
+    'purchase_price' => 'Purchase Price',
+    'sale_price' => 'Sale Price',
+    'profit_percent' => 'Profit Percent',
+    'stock' => 'Stock',
+    'description' => 'Description',
+
+
+    'ar' => [
+        'name' => 'Arabic Name',
+        'description' => 'Arabic Description',
+
+    ],
+
+    'en' => [
+        'name' => 'English Name',
+        'description' => 'English Description',
+
+    ],
 
 
 ];

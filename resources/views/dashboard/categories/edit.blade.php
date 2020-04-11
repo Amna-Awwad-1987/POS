@@ -39,15 +39,19 @@
                         <form class="form-horizontal p-t-20" action="{{route('dashboard.categories.update',$category->id)}}" method="POST" >
                             @csrf
                             {{method_field('put')}}
-                            <div class="form-group row">
-                                <label for="name" class="col-sm-3 control-label"><span style="color: red">*</span>{{__('site.name')}}</label>
-                                <div class="col-sm-9">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend"><span class="input-group-text"><i class="ti-user"></i></span></div>
-                                        <input type="text" class="form-control" name="name"  placeholder="{{__('site.name')}}" required value="{{$category->name}}">
+
+                            @foreach( config('translatable.locales') as $locale)
+                                <div class="form-group row">
+                                    <label for="name" class="col-sm-3 control-label"><span style="color: red">*</span>{{__('site.'  . $locale . '.name')}}</label>
+                                    <div class="col-sm-9">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend"><span class="input-group-text"><i class="ti-user"></i></span></div>
+                                            <input type="text" class="form-control" name="{{$locale}}[name]"  placeholder="{{__('site.'. $locale . '.name')}}"  value="{{$category->translate($locale)->name}}">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            @endforeach
+
                             <div class="form-group row m-b-0">
                                 <div class="offset-sm-3 col-sm-9">
                                     <button type="submit" class="btn btn-warning waves-effect waves-light"><i class="fa fa-edit"></i>{{' '.__('site.update')}}</button>

@@ -53,15 +53,19 @@
                 <!-- User Profile-->
                 <li class="nav-small-cap"><a href="{{route('dashboard.index')}}"><i class="mdi mdi-dots-horizontal"></i><span class="hide-menu font-18">{{__('site.dashboard')}}</span></a>
                 </li>
-                @if(auth()->user()->hasPermission('read_users'))
-                    <li class="nav-small-cap"><a href="{{route('dashboard.users.index')}}"><i class="mdi mdi-dots-horizontal"></i><span class="hide-menu font-18">{{__('site.users')}}</span></a>
-                    </li>
-                @endif
+
                 @if(auth()->user()->hasPermission('read_categories'))
                 <li class="nav-small-cap"><a href="{{route('dashboard.categories.index')}}"><i class="mdi mdi-dots-horizontal"></i><span class="hide-menu font-18">{{__('site.categories')}}</span></a>
                 </li>
                 @endif
-
+                @if(auth()->user()->hasPermission('read_products'))
+                    <li class="nav-small-cap"><a href="{{route('dashboard.products.index')}}"><i class="mdi mdi-dots-horizontal"></i><span class="hide-menu font-18">{{__('site.products')}}</span></a>
+                    </li>
+                @endif
+                @if(auth()->user()->hasPermission('read_users'))
+                    <li class="nav-small-cap"><a href="{{route('dashboard.users.index')}}"><i class="mdi mdi-dots-horizontal"></i><span class="hide-menu font-18">{{__('site.users')}}</span></a>
+                    </li>
+                @endif
             </ul>
         </nav>
         <!-- End Sidebar navigation -->

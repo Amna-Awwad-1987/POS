@@ -56,6 +56,8 @@
                                     <tr>
                                     <th>#</th>
                                     <th>{{__('site.name')}}</th>
+                                    <th>{{__('site.products_count')}}</th>
+                                    <th>{{__('site.related_products')}}</th>
                                     <th>{{__('site.action')}}</th>
                                     </tr>
                                 </thead>
@@ -65,25 +67,29 @@
                                 <tbody class="border border-success">
                                     @foreach($categories as $index => $category)
                                         <tr>
-                                    <td>{{$i++ +(4*($categories->currentPage()-1))}}</td>
-                                    <td>{{$category->name}}</td>
-                                    <td>
-                                        @if(auth()->user()->hasPermission('edit_categories'))
-                                            <a href="{{route('dashboard.categories.edit',$category->id)}}" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i>{{' '.__('site.edit')}}</a>
-                                        @else
-                                            <a href="#" class="btn btn-warning btn-sm disabled"><i class="fa fa-edit"></i>{{' '.__('site.edit')}}</a>
-                                        @endif
-                                        @if(auth()->user()->hasPermission('delete_categories'))
-                                            <form action="{{route('dashboard.categories.destroy',$category->id)}}" method="post" class="d-inline-block">
-                                                @csrf
-                                                {{method_field('delete')}}
-                                                <button type="submit" class=" btn btn-danger delete btn-sm " id="confirm_delete"><i class="fa fa-trash"></i>{{' '.__('site.delete')}}</button>
-                                            </form>
-                                        @else
-                                            <button class="btn btn-danger btn-sm disabled"><i class="fa fa-trash"></i>{{' '.__('site.delete')}}</button>
-                                        @endif
-                                    </td>
-                                </tr>
+                                            <td>{{$i++ +(4*($categories->currentPage()-1))}}</td>
+                                            <td>{{$category->name}}</td>
+                                            <td>{{$category->products->count()}}</td>
+                                            <td>
+                                                <a href="{{route('dashboard.products.index',['category_id'=> $category->id])}}"  class="btn btn-info btn-sm"> {{__('site.related_products')}}</a>
+                                            </td>
+                                            <td>
+                                            @if(auth()->user()->hasPermission('edit_categories'))
+                                                <a href="{{route('dashboard.categories.edit',$category->id)}}" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i>{{' '.__('site.edit')}}</a>
+                                            @else
+                                                <a href="#" class="btn btn-warning btn-sm disabled"><i class="fa fa-edit"></i>{{' '.__('site.edit')}}</a>
+                                            @endif
+                                            @if(auth()->user()->hasPermission('delete_categories'))
+                                                <form action="{{route('dashboard.categories.destroy',$category->id)}}" method="post" class="d-inline-block">
+                                                    @csrf
+                                                    {{method_field('delete')}}
+                                                    <button type="submit" class=" btn btn-danger delete btn-sm " id="confirm_delete"><i class="fa fa-trash"></i>{{' '.__('site.delete')}}</button>
+                                                </form>
+                                            @else
+                                                <button class="btn btn-danger btn-sm disabled"><i class="fa fa-trash"></i>{{' '.__('site.delete')}}</button>
+                                            @endif
+                                            </td>
+                                        </tr>
                                     @endforeach
                                 </tbody>
                             </table>

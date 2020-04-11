@@ -22,6 +22,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'l
                 Route::get('/index' ,'DashboardController@index')->name('index');
                 Route::resource('users' ,'UserController')->except('show');
                 Route::resource('categories' ,'CategoryController');
+                Route::resource('products' ,'ProductController');
 
                 });
 });

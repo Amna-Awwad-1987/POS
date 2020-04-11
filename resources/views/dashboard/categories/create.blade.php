@@ -38,15 +38,19 @@
                         @include('partial.errors')
                         <form class="form-horizontal p-t-20" action="{{route('dashboard.categories.store')}}" method="POST" >
                             @csrf
-                            <div class="form-group row">
-                                <label for="username" class="col-sm-3 control-label"><span style="color: red">*</span>{{__('site.name')}}</label>
-                                <div class="col-sm-9">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend"><span class="input-group-text"><i class="ti-user"></i></span></div>
-                                        <input type="text" class="form-control" name="name"  placeholder="{{__('site.name')}}" required value="{{old('name')}}">
+                            @foreach(config('translatable.locales') as $locale)
+                                <div class="form-group row">
+                                    <label for="username" class="col-sm-3 control-label"><span style="color: red">*</span>@lang('site.'.$locale.'.name')</label>
+                                    <div class="col-sm-9">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend"><span class="input-group-text"><i class="ti-user"></i></span></div>
+                                            <input type="text" class="form-control" name="{{$locale}}[name]"  placeholder="{{__('site.'.$locale.'.name')}}"  value="{{old($locale . '.name')}}">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+
+                            @endforeach
+
                             <div class="form-group row m-b-0">
                                 <div class="offset-sm-3 col-sm-9">
                                     <button type="submit" class="btn btn-info waves-effect waves-light"><i class="fa fa-plus"></i>{{' '.__('site.submit')}}</button>

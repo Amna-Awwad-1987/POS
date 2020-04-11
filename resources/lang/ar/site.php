@@ -41,7 +41,33 @@ return [
     'submit' => 'إرسال',
     'permissions' => 'الأذونات',
     'categories' => 'الأقسام',
+    'category' => 'القسم',
     'add_new_category' => 'إضافة قسم جديد',
     'edit_category' => 'تعديل بيانات قسم',
     'name' => 'الاسم',
+    'products' => 'المنتجات',
+    'products_count' => 'عدد المنتجات',
+    'related_products' => 'المنتجات المرتبطة',
+    'add_new_product' => 'إضافة منتج جديد',
+    'edit_product' => 'تعديل بيانات منتج',
+    'purchase_price' => 'سعر الشراء',
+    'profit_percent' => 'نسبة الربح',
+    'description' => 'الوصف',
+    'sale_price' => 'سعر البيع',
+    'stock' => 'المخزن',
+
+
+    'ar' => [
+        'name' => 'الاسم باللغة العربية',
+        'description' => 'الوصف باللغة العربية',
+
+    ],
+
+    'en' => [
+    'name' => 'الاسم باللغة الانجليزية',
+    'description' => 'الوصف باللغة الإنجليزية',
+
+    ],
+
+
 ];
