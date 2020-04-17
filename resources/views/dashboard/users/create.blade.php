@@ -104,7 +104,7 @@
                                 <div class="card-body">
                                     <h4 class="card-title">{{__('site.permissions')}}</h4>
                                     @php
-                                        $models = ['users','categories','products'];
+                                        $models = ['users','categories','products','clients', 'orders'];
                                         $maps = ['create','read','edit','delete'];
                                     @endphp
 
@@ -141,19 +141,6 @@
 @endsection
 @section('jsFooter')
     <script>
-        $(".image").change(function() {
-
-            if (this.files && this.files[0]) {
-                var reader = new FileReader();
-
-                reader.onload = function(e) {
-                    $('.image_preview').attr('src', e.target.result);
-                }
-
-                reader.readAsDataURL(this.files[0]); // convert to base64 string
-            }
-            readURL(this);
-        });
 
         function myFunction() {
             var x = document.getElementById("password");

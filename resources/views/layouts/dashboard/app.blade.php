@@ -779,6 +779,9 @@
 {{--<script src="{{asset('dashboard/ckeditor/config.js')}}"></script>--}}
 <script src="{{asset('dashboard/ckeditor/ckeditor.js')}}"></script>
 <script src="{{asset('dashboard/ckeditor/translations/ar.js')}}"></script>
+<script src="{{asset('dashboard/js/site-custom.js')}}"></script>
+<script src="{{asset('dashboard/js/image-preview.js')}}"></script>
+<script src="{{asset('dashboard/jquery-number-master/jquery.number.js')}}"></script>
 
 <script>
     $(document).ready(function () {

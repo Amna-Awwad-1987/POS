@@ -44,26 +44,43 @@ return [
     'edit_category' => 'Edit Category Data',
     'name' => 'Name',
     'products' => 'Products',
+    'product' => 'Product',
     'products_count' => 'Products Count',
     'related_products' => 'Related Products',
     'add_new_product' => 'Add New Product',
-    'edit_product' => 'Edit Product',
+    'edit_product' => 'Edit Product Data',
     'purchase_price' => 'Purchase Price',
     'sale_price' => 'Sale Price',
+    'price' => 'Price',
+    'unit_price' => 'Unit Price',
     'profit_percent' => 'Profit Percent',
     'stock' => 'Stock',
+    'quantity' => 'Quantity',
+    'total' => 'Total',
     'description' => 'Description',
+
+    'clients' => 'Client',
+    'add_new_client' => 'Add New Client',
+    'edit_client' => 'Edit Client Data',
+    'mobile' => 'Phone No.',
+    'mobile2' => 'An Other Phone No.',
+    'address' => 'Address',
+    'orders' => 'Orders',
+    'add_order' => 'Add Order',
+    'edit_order' => 'Edit Order',
 
 
     'ar' => [
         'name' => 'Arabic Name',
         'description' => 'Arabic Description',
+        'address' => 'Arabic Address',
 
     ],
 
     'en' => [
         'name' => 'English Name',
         'description' => 'English Description',
+        'address' => 'English Address',
 
     ],
 
