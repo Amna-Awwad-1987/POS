@@ -6,6 +6,8 @@ return [
             'users' => 'c,r,e,d',
             'categories' => 'c,r,e,d',
             'products' => 'c,r,e,d',
+            'clients' => 'c,r,e,d',
+            'orders' => 'c,r,e,d',
 
         ],
         'admin' => [],

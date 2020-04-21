@@ -98,7 +98,7 @@
                                 <div class="col-sm-9">
                                     <div class="input-group">
                                         <div class="input-group-prepend"><span class="input-group-text"><i class="ti-money"></i></span></div>
-                                        <input type="number" class="form-control" name="purchase_price" id="" required placeholder="{{__('site.purchase_price')}}" value="{{$product->purchase_price}}" >
+                                        <input type="number" class="form-control" step="0.01" name="purchase_price" id="" required placeholder="{{__('site.purchase_price')}}" value="{{$product->purchase_price}}" >
                                     </div>
                                 </div>
                             </div>
@@ -107,7 +107,7 @@
                                 <div class="col-sm-9">
                                     <div class="input-group">
                                         <div class="input-group-prepend"><span class="input-group-text"><i class="ti-money"></i></span></div>
-                                        <input type="number" class="form-control" name="sale_price" required id="" placeholder="{{__('site.sale_price')}}" value="{{$product->sale_price}}"  >
+                                        <input type="number" class="form-control" step="0.01" name="sale_price" required id="" placeholder="{{__('site.sale_price')}}" value="{{$product->sale_price}}"  >
                                     </div>
                                 </div>
                             </div>
@@ -131,23 +131,4 @@
             </div>
         </div>
     </div>
-@endsection
-@section('jsFooter')
-    <script>
-        $(".image").change(function() {
-
-            if (this.files && this.files[0]) {
-                var reader = new FileReader();
-
-                reader.onload = function(e) {
-                    $('.image_preview').attr('src', e.target.result);
-                }
-
-                reader.readAsDataURL(this.files[0]); // convert to base64 string
-            }
-            readURL(this);
-        });
-
-    </script>
-
 @endsection

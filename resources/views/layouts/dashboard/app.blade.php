@@ -31,6 +31,26 @@
             body, h1, h2, h3, h4, h5, h6{
                 font-family: 'Cairo', sans-serif !important;
             }
+            .loader {
+                border: 8px solid #f3f3f3;
+                border-radius: 50%;
+                border-top: 6px solid #3498db;
+                width: 60px;
+                height: 60px;
+                -webkit-animation: spin 2s linear infinite; /* Safari */
+                animation: spin 2s linear infinite;
+            }
+
+            /* Safari */
+            @-webkit-keyframes spin {
+                0% { -webkit-transform: rotate(0deg); }
+                100% { -webkit-transform: rotate(360deg); }
+            }
+
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
         </style>
     @endif
     @yield('cssHeader')
@@ -779,7 +799,10 @@
 {{--<script src="{{asset('dashboard/ckeditor/config.js')}}"></script>--}}
 <script src="{{asset('dashboard/ckeditor/ckeditor.js')}}"></script>
 <script src="{{asset('dashboard/ckeditor/translations/ar.js')}}"></script>
-
+<script src="{{asset('dashboard/js/site-custom.js')}}"></script>
+<script src="{{asset('dashboard/js/image-preview.js')}}"></script>
+<script src="{{asset('dashboard/jquery-number-master/jquery.number.js')}}"></script>
+<script src="{{asset('dashboard/js/printThis.js')}}"></script>
 <script>
     $(document).ready(function () {
         $('.sidebar-menu').tree();

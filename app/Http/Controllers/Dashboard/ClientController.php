@@ -2,17 +2,14 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Category;
-use App\CategoryTranslation;
+use App\Client;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
-use RealRashid\SweetAlert\Facades\Alert;
 
-
-class CategoryController extends Controller
+class ClientController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -22,15 +19,15 @@ class CategoryController extends Controller
     public function index(Request $request)
     {
 
-        $categories = Category::when($request->search, function($q) use($request ){
-            return $q->when($request->search, function($query) use($request) {
+        $clients = Client::when($request->search, function($query) use($request ){
 
-                return $query->whereTranslationLike('name', '%' . $request->search . '%');
+            return $query->whereTranslationLike( 'name', '%'. $request->search . '%')
+//                ->orWhere('address', 'like', '%'. $request->search . '%')
+            ->orWhere('mobile', 'like' , '%'. $request->search . '%');
 
-            });
-            })->latest()->paginate(5);
+        })->latest()->paginate(4);
 
-       return view('dashboard.categories.index', compact('categories'));
+        return view('dashboard.clients.index', compact('clients'));
     }
 
     /**
@@ -40,7 +37,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('dashboard.categories.create');
+        return view('dashboard.clients.create');
     }
 
     /**
@@ -51,20 +48,28 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
+//        dd($request->all());
         $rules = [];
+
         foreach (config('translatable.locales') as $locale){
-            $rules += [ $locale . '.name'=> ['required' ,Rule::unique('category_translations', 'name')]];
+            $rules += [ $locale . '.name'=> ['required'],
+                $locale . '.address'=> ['required']
+            ];
         }
+        $rules += [
+            'mobile' => ['required' ,'min:1' ,Rule::unique('clients', 'mobile'),
+                ]
+        ];
 
         $validator = Validator::make($request->all(), $rules);
 
         if ($validator->fails()) {
             return Redirect::back()->withInput()->withErrors($validator->errors()->getMessages());
         }
-
-        $category = Category::create($request->all());
+        $request_data = $request->all();
+        $client = Client::create($request_data);
         alert()->success(__('site.success_job'),__('site.added_successfully'));
-        return redirect('/dashboard/categories');
+        return redirect('/dashboard/clients');
 
     }
 
@@ -74,21 +79,10 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+
+    public function edit(Client $client)
     {
-
-
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Category $category)
-    {
-      return view('dashboard.categories.edit',compact('category'));
+        return view('dashboard.clients.edit',compact('client'));
     }
 
     /**
@@ -100,21 +94,29 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id )
     {
-        $category = Category::find($id);
-
+        $client = Client::find($id);
         $rules = [];
+
         foreach (config('translatable.locales') as $locale){
-           $rules += [$locale . '.name'=> ['required', Rule::unique('category_translations', 'name')->ignore($category->id , 'category_id')]];
+            $rules += [ $locale . '.name'=> ['required'],
+                $locale . '.address'=> ['required']
+            ];
         }
+        $rules += [
+            'mobile' => ['required','min:1' ,Rule::unique('clients', 'mobile')->ignore($client->id , 'id'),
+            ]
+        ];
+
         $validator = Validator::make($request->all(), $rules);
 
         if ($validator->fails()) {
             return Redirect::back()->withInput()->withErrors($validator->errors()->getMessages());
         }
 
-        $category->update($request->all());
+        $request_data = $request->all();
+        $client->update($request_data);
         alert()->success(__('site.success_job'),__('site.updated_successfully'));
-        return redirect('/dashboard/categories');
+        return redirect('/dashboard/clients');
 
 
     }
@@ -125,10 +127,11 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
+    public function destroy(Client $client)
     {
-        $category->delete();
+        
+        $client->delete();
         alert()->success(__('site.success_job'),__('site.deleted_successfully'));
-        return redirect()->route('dashboard.categories.index');
+        return redirect()->route('dashboard.clients.index');
     }
 }

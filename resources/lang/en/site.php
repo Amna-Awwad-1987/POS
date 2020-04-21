@@ -11,7 +11,9 @@ return [
     | these language lines according to your application's requirements.
     |
     */
-
+    'login'   => 'Log in',
+    'forget_password'   => 'Forget Your Password ?',
+    'remember_me'   => 'Remember Me',
     'dashboard'   => 'Dashboard',
     'users'   => 'Users',
     'no_data_found' => 'Unfortunately There Is No Any Records',
@@ -22,6 +24,7 @@ return [
     'update' => 'Update',
     'search' => 'Search',
     'action' => 'Action',
+    'status' => 'Status',
     'yse' => 'Yes',
     'no' => 'No',
     'first_name' => 'First Name',
@@ -44,26 +47,52 @@ return [
     'edit_category' => 'Edit Category Data',
     'name' => 'Name',
     'products' => 'Products',
+    'product' => 'Product',
     'products_count' => 'Products Count',
     'related_products' => 'Related Products',
+    'show_products' => 'Show Products',
     'add_new_product' => 'Add New Product',
-    'edit_product' => 'Edit Product',
+    'edit_product' => 'Edit Product Data',
     'purchase_price' => 'Purchase Price',
     'sale_price' => 'Sale Price',
+    'price' => 'Price',
+    'unit_price' => 'Unit Price',
     'profit_percent' => 'Profit Percent',
     'stock' => 'Stock',
+    'quantity' => 'Quantity',
+    'total' => 'Total',
     'description' => 'Description',
+
+    'clients' => 'Clients',
+    'client' => 'Client',
+    'add_new_client' => 'Add New Client',
+    'edit_client' => 'Edit Client Data',
+    'mobile' => 'Phone No.',
+    'mobile2' => 'An Other Phone No.',
+    'address' => 'Address',
+    'orders' => 'Orders',
+    'previous_orders'=>'Previous Orders',
+    'add_order' => 'Add Order',
+    'edit_order' => 'Edit Order',
+    'total_payment'=>'Total of Payment ',
+    'created_at'=>'Added At',
+    'print'=>'Print',
+    'check_stock'=>'Stock Is Not Enough',
+    'error'=>'Error !',
+
 
 
     'ar' => [
         'name' => 'Arabic Name',
         'description' => 'Arabic Description',
+        'address' => 'Arabic Address',
 
     ],
 
     'en' => [
         'name' => 'English Name',
         'description' => 'English Description',
+        'address' => 'English Address',
 
     ],
 

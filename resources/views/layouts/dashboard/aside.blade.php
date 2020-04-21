@@ -1,3 +1,4 @@
+
 <aside class="left-sidebar">
     <!-- Sidebar scroll-->
     <div class="scroll-sidebar">
@@ -62,10 +63,19 @@
                     <li class="nav-small-cap"><a href="{{route('dashboard.products.index')}}"><i class="mdi mdi-dots-horizontal"></i><span class="hide-menu font-18">{{__('site.products')}}</span></a>
                     </li>
                 @endif
+                @if(auth()->user()->hasPermission('read_clients'))
+                    <li class="nav-small-cap"><a href="{{route('dashboard.clients.index')}}"><i class="mdi mdi-dots-horizontal"></i><span class="hide-menu font-18">{{__('site.clients')}}</span></a>
+                    </li>
+                @endif
+{{--                @if(auth()->user()->hasPermission('read_clients'))--}}
+                    <li class="nav-small-cap"><a href="{{route('dashboard.orders.index')}}"><i class="mdi mdi-dots-horizontal"></i><span class="hide-menu font-18">{{__('site.orders')}}</span></a>
+                    </li>
+{{--                @endif--}}
                 @if(auth()->user()->hasPermission('read_users'))
                     <li class="nav-small-cap"><a href="{{route('dashboard.users.index')}}"><i class="mdi mdi-dots-horizontal"></i><span class="hide-menu font-18">{{__('site.users')}}</span></a>
                     </li>
                 @endif
+
             </ul>
         </nav>
         <!-- End Sidebar navigation -->

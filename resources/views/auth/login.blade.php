@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html dir="rtl">
+<html dir="{{ LaravelLocalization::getCurrentLocaleDirection() }}">
 
 <head>
     <meta charset="utf-8">
@@ -19,6 +19,15 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    @if(app()->getLocale() == 'ar')
+        <link href="https://fonts.googleapis.com/css?family=Cairo:400,700" rel="stylesheet">
+        <style>
+            body, h1, h2, h3, h4, h5, h6{
+                font-family: 'Cairo', sans-serif !important;
+            }
+        </style>
+    @endif
+
 </head>
 
 <body>
@@ -43,7 +52,7 @@
             <div id="loginform">
                 <div class="logo">
                     <span class="db"><img src="{{asset('dashboard/img/logo-icon.png')}}" alt="logo" /></span>
-                    <h5 class="font-medium m-b-20">Sign In to Admin</h5>
+                    <h5 class="font-medium m-b-20">{{__('site.login')}}</h5>
                 </div>
                 <!-- Form -->
                 <div class="row">
@@ -54,7 +63,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="basic-addon1"><i class="ti-email"></i></span>
                                 </div>
-                                <input type="email" name="email" class="form-control form-control-lg @error('email') is-invalid @enderror" placeholder="{{ __('E-Mail Address') }}" aria-label="{{ __('E-Mail Address') }}" aria-describedby="basic-addon1">
+                                <input type="email" name="email" class="form-control form-control-lg @error('email') is-invalid @enderror" placeholder="{{ __('site.email') }}" aria-label="{{ __('site.email') }}" aria-describedby="basic-addon1">
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -65,7 +74,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="basic-addon2"><i class="ti-pencil"></i></span>
                                 </div>
-                                <input type="password" class="form-control form-control-lg @error('password') is-invalid @enderror" name="password" placeholder="{{__('password')}}" aria-label="Password" aria-describedby="basic-addon1">
+                                <input type="password" class="form-control form-control-lg @error('password') is-invalid @enderror" name="password" placeholder="{{__('site.password')}}" aria-label="Password" aria-describedby="basic-addon1">
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -77,9 +86,9 @@
                                 <div class="col-md-12">
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                        <label class="custom-control-label" for="customCheck1" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('Remember Me') }}</label>
+                                        <label class="custom-control-label float-left" for="customCheck1" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>  {{ __('site.remember_me') }}</label>
                                         @if (Route::has('password.request'))
-                                        <a href="javascript:void(0)" id="to-recover" class="text-dark float-right"><i class="fa fa-lock m-r-5"></i> {{ __('Forgot Your Password?') }}</a>
+                                        <a href="javascript:void(0)" id="to-recover" class="text-dark float-right"><i class="fa fa-lock m-r-5"></i> {{ __('site.forget_password') }}</a>
                                         @endif
                                     </div>
                                 </div>
@@ -87,7 +96,7 @@
 
                             <div class="form-group text-center">
                                 <div class="col-xs-12 p-b-20">
-                                    <button class="btn btn-block btn-lg btn-info" type="submit"> {{ __('Login') }}</button>
+                                    <button class="btn btn-block btn-lg btn-info" type="submit"> {{ __('site.login') }}</button>
                                 </div>
                             </div>
                         </form>
