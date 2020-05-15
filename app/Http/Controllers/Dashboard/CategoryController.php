@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Dashboard;
 use App\Category;
 use App\CategoryTranslation;
 use App\Http\Controllers\Controller;
+use GuzzleHttp;
+use http\Client;
+use http\QueryString;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
@@ -74,11 +77,6 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-
-
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -131,4 +129,28 @@ class CategoryController extends Controller
         alert()->success(__('site.success_job'),__('site.deleted_successfully'));
         return redirect()->route('dashboard.categories.index');
     }
+
+    public function image_editor(){
+
+
+        $client = new GuzzleHttp\Client();
+        $request = new Client\Request();
+
+        $request->setRequestUrl('https://pixelixe.p.rapidapi.com/docs/');
+        $request->setRequestMethod('GET');
+        $request->setQuery(new QueryString(array(
+            'apikey' => '<required>'
+        )));
+
+        $request->setHeaders(array(
+            'x-rapidapi-host' => 'pixelixe.p.rapidapi.com',
+            'x-rapidapi-key' => 'f6e0338d98msh45ed1f4718aca3ep15f28fjsnba222abad1d4'
+        ));
+
+        $client->enqueue($request)->send();
+        $response = $client->getResponse();
+
+        echo $response->getBody();
+    }
+
 }

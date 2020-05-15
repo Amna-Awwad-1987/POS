@@ -16,7 +16,7 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">
-                                <a href="{{route('dashboard.index')}}">{{__('site.dashboard')}}</a>
+                                <a href="{{route('dashboard.welcome')}}">{{__('site.dashboard')}}</a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">{{__('site.categories')}}</li>
                         </ol>
@@ -26,6 +26,8 @@
         </div>
     </div>
     <div class="container-fluid">
+        <div id="tui-image-editor"></div>
+
         <div class="row">
             <!-- Column -->
             <div class="col-md-12 col-lg-12">
@@ -105,6 +107,7 @@
     </div>
 @endsection
 @section('jsFooter')
+
     <script type="text/javascript">
         $(document).ready(function(){
             $( "#confirm_delete" ).submit(function( event ) {

@@ -10,7 +10,7 @@
                     <!-- User Profile-->
                     <div class="user-profile dropdown m-t-20">
                         <div class="user-pic">
-                            <img src="{{url('dashboard/img/1.jpg')}}" alt="users" class="rounded-circle img-fluid" />
+                            <img src="{{url('dashboard_files/img/1.jpg')}}" alt="users" class="rounded-circle img-fluid" />
                         </div>
                         <div class="user-content hide-menu m-t-10">
                             <h5 class="m-b-10 user-name font-medium">{{auth()->user()->first_name}} {{auth()->user()->last_name}}</h5>
@@ -52,7 +52,7 @@
                     <!-- End User Profile-->
                 </li>
                 <!-- User Profile-->
-                <li class="nav-small-cap"><a href="{{route('dashboard.index')}}"><i class="mdi mdi-dots-horizontal"></i><span class="hide-menu font-18">{{__('site.dashboard')}}</span></a>
+                <li class="nav-small-cap"><a href="{{route('dashboard.welcome')}}"><i class="mdi mdi-dots-horizontal"></i><span class="hide-menu font-18">{{__('site.dashboard')}}</span></a>
                 </li>
 
                 @if(auth()->user()->hasPermission('read_categories'))

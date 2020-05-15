@@ -22,14 +22,16 @@
                     <div class="d-flex align-items-center">
                         <div class="m-r-10">
                                     <span class="btn btn-circle btn-lg bg-danger">
-                                        <i class="ti-clipboard text-white"></i>
+                                        <i class="ti-target text-white"></i>
                                     </span>
                         </div>
                         <div>
-                            New projects
+                            <a href="{{route('dashboard.categories.index')}}" title="{{__('site.read')}}">
+                            {{__('site.categories')}}
+                            </a>
                         </div>
                         <div class="ml-auto">
-                            <h2 class="m-b-0 font-light">23</h2>
+                            <h2 class="m-b-0 font-light">{{$categories}}</h2>
                         </div>
                     </div>
                 </div>
@@ -41,15 +43,16 @@
                     <div class="d-flex align-items-center">
                         <div class="m-r-10">
                                     <span class="btn btn-circle btn-lg btn-info">
-                                        <i class="ti-wallet text-white"></i>
+                                        <i class="ti-shopping-cart text-white"></i>
                                     </span>
                         </div>
                         <div>
-                            Total Earnings
-
+                            <a href="{{route('dashboard.products.index')}}" title="{{__('site.read')}}">
+                            {{__('site.products')}}
+                            </a>
                         </div>
                         <div class="ml-auto">
-                            <h2 class="m-b-0 font-light">113</h2>
+                            <h2 class="m-b-0 font-light">{{$products}}</h2>
                         </div>
                     </div>
                 </div>
@@ -61,15 +64,16 @@
                     <div class="d-flex align-items-center">
                         <div class="m-r-10">
                                     <span class="btn btn-circle btn-lg bg-success">
-                                        <i class="ti-shopping-cart text-white"></i>
+                                        <i class="ti-user text-white"></i>
                                     </span>
                         </div>
                         <div>
-                            Total Sales
-
+                            <a href="{{route('dashboard.clients.index')}}" title="{{__('site.read')}}">
+                            {{__('site.clients')}}
+                            </a>
                         </div>
                         <div class="ml-auto">
-                            <h2 class="m-b-0 font-light">43</h2>
+                            <h2 class="m-b-0 font-light">{{$clients}}</h2>
                         </div>
                     </div>
                 </div>
@@ -81,15 +85,16 @@
                     <div class="d-flex align-items-center">
                         <div class="m-r-10">
                                     <span class="btn btn-circle btn-lg bg-warning">
-                                        <i class="mdi mdi-currency-usd text-white"></i>
+                                        <i class="mdi mdi-archive text-white"></i>
                                     </span>
                         </div>
                         <div>
-                            Profit
-
+                            <a href="{{route('dashboard.orders.index')}}" title="{{__('site.read')}}">
+                            {{__('site.orders')}}
+                            </a>
                         </div>
                         <div class="ml-auto">
-                            <h2 class="m-b-0 font-light">63</h2>
+                            <h2 class="m-b-0 font-light"><a href="{{route('dashboard.orders.index')}}" title="{{__('site.read')}}">{{$orders}}</a></h2>
                         </div>
                     </div>
                 </div>

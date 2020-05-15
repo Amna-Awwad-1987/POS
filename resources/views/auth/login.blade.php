@@ -9,10 +9,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{url('dashboard/img/favicon.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{url('dashboard_files/img/favicon.png')}}">
     <title>AdminBite admin Template - The Ultimate Multipurpose admin template</title>
     <!-- Custom CSS -->
-    <link href="{{asset('dashboard/css/style.min.css')}}" rel="stylesheet">
+    <link href="{{asset('dashboard_files/css/style.min.css')}}" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -47,11 +47,11 @@
     <!-- ============================================================== -->
     <!-- Login box.scss -->
     <!-- ============================================================== -->
-    <div class="auth-wrapper d-flex no-block justify-content-center align-items-center" style="background:url('dashboard/img/auth-bg.jpg') no-repeat center center;">
+    <div class="auth-wrapper d-flex no-block justify-content-center align-items-center" style="background:url('dashboard_files/img/auth-bg.jpg') no-repeat center center;">
         <div class="auth-box">
             <div id="loginform">
                 <div class="logo">
-                    <span class="db"><img src="{{asset('dashboard/img/logo-icon.png')}}" alt="logo" /></span>
+                    <span class="db"><img src="{{asset('dashboard_files/img/logo-icon.png')}}" alt="logo" /></span>
                     <h5 class="font-medium m-b-20">{{__('site.login')}}</h5>
                 </div>
                 <!-- Form -->
@@ -105,7 +105,7 @@
             </div>
             <div id="recoverform">
                 <div class="logo">
-                    <span class="db"><img src="{{url('dashboard/img/logo-icon.png')}}" alt="logo" /></span>
+                    <span class="db"><img src="{{url('dashboard_files/img/logo-icon.png')}}" alt="logo" /></span>
                     <h5 class="font-medium m-b-20">Recover Password</h5>
                     <span>Enter your Email and instructions will be sent to you!</span>
                 </div>
@@ -154,10 +154,10 @@
 <!-- ============================================================== -->
 <!-- All Required js -->
 <!-- ============================================================== -->
-<script src="{{asset('dashboard/js/jquery.min.js')}}"></script>
+<script src="{{asset('dashboard_files/js/jquery.min.js')}}"></script>
 <!-- Bootstrap tether Core JavaScript -->
-<script src="{{asset('dashboard/js/popper.min.js')}}"></script>
-<script src="{{asset('dashboard/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('dashboard_files/js/popper.min.js')}}"></script>
+<script src="{{asset('dashboard_files/js/bootstrap.min.js')}}"></script>
 <!-- ============================================================== -->
 <!-- This page plugin js -->
 <!-- ============================================================== -->

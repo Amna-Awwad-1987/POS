@@ -9,17 +9,17 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{url('dashboard/img/favicon.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{url('dashboard_files/img/favicon.png')}}">
     <title>@yield('title')</title>
     <!-- Custom CSS -->
-{{--    <link href="{{asset('dashboard/css/bootstrap.min.css')}}" rel="stylesheet">--}}
-    <link href="{{asset('dashboard/css/chartist.min.css')}}" rel="stylesheet">
-    <link href="{{asset('dashboard/css/c3.min.css')}}" rel="stylesheet">
-    <link href="{{asset('dashboard/css/morris.css')}}" rel="stylesheet">
+{{--    <link href="{{asset('dashboard_files/css/bootstrap.min.css')}}" rel="stylesheet">--}}
+    <link href="{{asset('dashboard_files/css/chartist.min.css')}}" rel="stylesheet">
+    <link href="{{asset('dashboard_files/css/c3.min.css')}}" rel="stylesheet">
+    <link href="{{asset('dashboard_files/css/morris.css')}}" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="{{asset('dashboard/css/style.min.css')}}" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('dashboard/css/noty.css')}}">
-    <script src="{{asset('dashboard/js/noty.min.js')}}"></script>;
+    <link href="{{asset('dashboard_files/css/style.min.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('dashboard_files/css/noty.css')}}">
+    <script src="{{asset('dashboard_files/js/noty.min.js')}}"></script>;
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -53,6 +53,11 @@
             }
         </style>
     @endif
+
+    <link rel="stylesheet" href="https://uicdn.toast.com/tui-image-editor/latest/tui-image-editor.css">
+    <script src="https://uicdn.toast.com/tui-image-editor/latest/tui-image-editor.js"></script>
+    <script src="{{asset('css/tui-image-editor.css')}}"></script>
+
     @yield('cssHeader')
 
 </head>
@@ -89,17 +94,17 @@
                     <b class="logo-icon">
                         <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                         <!-- Dark Logo icon -->
-                        <img src="{{url('dashboard/img/logo-icon.png')}}" alt="homepage" class="dark-logo" />
+                        <img src="{{url('dashboard_files/img/logo-icon.png')}}" alt="homepage" class="dark-logo" />
                         <!-- Light Logo icon -->
-                        <img src="{{url('dashboard/img/logo-light-icon.png')}}" alt="homepage" class="light-logo" />
+                        <img src="{{url('dashboard_files/img/logo-light-icon.png')}}" alt="homepage" class="light-logo" />
                     </b>
                     <!--End Logo icon -->
                     <!-- Logo text -->
                     <span class="logo-text">
                             <!-- dark Logo text -->
-                            <img src="{{url('dashboard/img/logo-text.png')}}" alt="homepage" class="dark-logo" />
+                            <img src="{{url('dashboard_files/img/logo-text.png')}}" alt="homepage" class="dark-logo" />
                         <!-- Light Logo text -->
-                            <img src="{{url('dashboard/img/logo-light-text.png')}}" class="light-logo" alt="homepage" />
+                            <img src="{{url('dashboard_files/img/logo-light-text.png')}}" class="light-logo" alt="homepage" />
                         </span>
                 </a>
                 <!-- ============================================================== -->
@@ -228,7 +233,7 @@
                                         <!-- Message -->
                                         <a href="javascript:void(0)" class="message-item">
                                                 <span class="user-img">
-                                                    <img src="{{url('dashboard/img/1.jpg')}}" alt="user" class="rounded-circle">
+                                                    <img src="{{url('dashboard_files/img/1.jpg')}}" alt="user" class="rounded-circle">
                                                     <span class="profile-status online pull-right"></span>
                                                 </span>
                                             <div class="mail-contnet">
@@ -240,7 +245,7 @@
                                         <!-- Message -->
                                         <a href="javascript:void(0)" class="message-item">
                                                 <span class="user-img">
-                                                    <img src="{{url('dashboard/img/2.jpg')}}" alt="user" class="rounded-circle">
+                                                    <img src="{{url('dashboard_files/img/2.jpg')}}" alt="user" class="rounded-circle">
                                                     <span class="profile-status busy pull-right"></span>
                                                 </span>
                                             <div class="mail-contnet">
@@ -252,7 +257,7 @@
                                         <!-- Message -->
                                         <a href="javascript:void(0)" class="message-item">
                                                 <span class="user-img">
-                                                    <img src="{{url('dashboard/img/3.jpg')}}" alt="user" class="rounded-circle">
+                                                    <img src="{{url('dashboard_files/img/3.jpg')}}" alt="user" class="rounded-circle">
                                                     <span class="profile-status away pull-right"></span>
                                                 </span>
                                             <div class="mail-contnet">
@@ -264,7 +269,7 @@
                                         <!-- Message -->
                                         <a href="javascript:void(0)" class="message-item">
                                                 <span class="user-img">
-                                                    <img src="{{url('dashboard/img/4.jpg')}}" alt="user" class="rounded-circle">
+                                                    <img src="{{url('dashboard_files/img/4.jpg')}}" alt="user" class="rounded-circle">
                                                     <span class="profile-status offline pull-right"></span>
                                                 </span>
                                             <div class="mail-contnet">
@@ -341,7 +346,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true"
                            aria-expanded="false">
-                            <img src="{{url('dashboard/img/1.jpg')}}" alt="user" class="rounded-circle" width="31">
+                            <img src="{{url('dashboard_files/img/1.jpg')}}" alt="user" class="rounded-circle" width="31">
                         </a>
                         <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
                                 <span class="with-arrow">
@@ -349,7 +354,7 @@
                                 </span>
                             <div class="d-flex no-block align-items-center p-15 bg-primary text-white m-b-10">
                                 <div class="">
-                                    <img src="{{url('dashboard/img/1.jpg')}}" alt="user" class="img-circle" width="60">
+                                    <img src="{{url('dashboard_files/img/1.jpg')}}" alt="user" class="img-circle" width="60">
                                 </div>
                                 <div class="m-l-10">
                                     <h4 class="m-b-0">{{auth()->user()->first_name}} {{auth()->user()->last_name}}</h4>
@@ -567,7 +572,7 @@
                         <div class="message-center chat-scroll">
                             <a href="javascript:void(0)" class="message-item" id='chat_user_1' data-user-id='1'>
                                     <span class="user-img">
-                                        <img src="{{url('dashboard/img/1.jpg')}}" alt="user" class="rounded-circle">
+                                        <img src="{{url('dashboard_files/img/1.jpg')}}" alt="user" class="rounded-circle">
                                         <span class="profile-status online pull-right"></span>
                                     </span>
                                 <div class="mail-contnet">
@@ -579,7 +584,7 @@
                             <!-- Message -->
                             <a href="javascript:void(0)" class="message-item" id='chat_user_2' data-user-id='2'>
                                     <span class="user-img">
-                                        <img src="{{url('dashboard/img/2.jpg')}}" alt="user" class="rounded-circle">
+                                        <img src="{{url('dashboard_files/img/2.jpg')}}" alt="user" class="rounded-circle">
                                         <span class="profile-status busy pull-right"></span>
                                     </span>
                                 <div class="mail-contnet">
@@ -591,7 +596,7 @@
                             <!-- Message -->
                             <a href="javascript:void(0)" class="message-item" id='chat_user_3' data-user-id='3'>
                                     <span class="user-img">
-                                        <img src="{{url('/dashboard/img/3.jpg')}}" alt="user" class="rounded-circle">
+                                        <img src="{{url('/dashboard_files/img/3.jpg')}}" alt="user" class="rounded-circle">
                                         <span class="profile-status away pull-right"></span>
                                     </span>
                                 <div class="mail-contnet">
@@ -603,7 +608,7 @@
                             <!-- Message -->
                             <a href="javascript:void(0)" class="message-item" id='chat_user_4' data-user-id='4'>
                                     <span class="user-img">
-                                        <img src="{{url('dashboard/img/4.jpg')}}" alt="user" class="rounded-circle">
+                                        <img src="{{url('dashboard_files/img/4.jpg')}}" alt="user" class="rounded-circle">
                                         <span class="profile-status offline pull-right"></span>
                                     </span>
                                 <div class="mail-contnet">
@@ -616,7 +621,7 @@
                             <!-- Message -->
                             <a href="javascript:void(0)" class="message-item" id='chat_user_5' data-user-id='5'>
                                     <span class="user-img">
-                                        <img src="{{url('/dashboard/img/5.jpg')}}" alt="user" class="rounded-circle">
+                                        <img src="{{url('/dashboard_files/img/5.jpg')}}" alt="user" class="rounded-circle">
                                         <span class="profile-status offline pull-right"></span>
                                     </span>
                                 <div class="mail-contnet">
@@ -629,7 +634,7 @@
                             <!-- Message -->
                             <a href="javascript:void(0)" class="message-item" id='chat_user_6' data-user-id='6'>
                                     <span class="user-img">
-                                        <img src="{{url('/dashboard/img/6.jpg')}}" alt="user" class="rounded-circle">
+                                        <img src="{{url('/dashboard_files/img/6.jpg')}}" alt="user" class="rounded-circle">
                                         <span class="profile-status offline pull-right"></span>
                                     </span>
                                 <div class="mail-contnet">
@@ -642,7 +647,7 @@
                             <!-- Message -->
                             <a href="javascript:void(0)" class="message-item" id='chat_user_7' data-user-id='7'>
                                     <span class="user-img">
-                                        <img src="{{url('/dashboard/img/7.jpg')}}" alt="user" class="rounded-circle">
+                                        <img src="{{url('/dashboard_files/img/7.jpg')}}" alt="user" class="rounded-circle">
                                         <span class="profile-status offline pull-right"></span>
                                     </span>
                                 <div class="mail-contnet">
@@ -655,7 +660,7 @@
                             <!-- Message -->
                             <a href="javascript:void(0)" class="message-item" id='chat_user_8' data-user-id='8'>
                                     <span class="user-img">
-                                        <img src="{{url('/dashboard/img/8.jpg')}}" alt="user" class="rounded-circle">
+                                        <img src="{{url('/dashboard_files/img/8.jpg')}}" alt="user" class="rounded-circle">
                                         <span class="profile-status offline pull-right"></span>
                                     </span>
                                 <div class="mail-contnet">
@@ -696,7 +701,7 @@
                     </div>
                     <div class="sl-item">
                         <div class="sl-left">
-                            <img class="rounded-circle" alt="user" src="{{url('/dashboard/img/2.jpg')}}"> </div>
+                            <img class="rounded-circle" alt="user" src="{{url('/dashboard_files/img/2.jpg')}}"> </div>
                         <div class="sl-right">
                             <div class="font-medium">Go to the Doctor
                                 <span class="sl-date">5 minutes ago</span>
@@ -706,7 +711,7 @@
                     </div>
                     <div class="sl-item">
                         <div class="sl-left">
-                            <img class="rounded-circle" alt="user" src="{{url('/dashboard/img/1.jpg')}}"> </div>
+                            <img class="rounded-circle" alt="user" src="{{url('/dashboard_files/img/1.jpg')}}"> </div>
                         <div class="sl-right">
                             <div>
                                 <a href="javascript:void(0)">Stephen</a>
@@ -738,7 +743,7 @@
                     </div>
                     <div class="sl-item">
                         <div class="sl-left">
-                            <img class="rounded-circle" alt="user" src="{{url('/dashboard/img/4.jpg')}}"> </div>
+                            <img class="rounded-circle" alt="user" src="{{url('/dashboard_files/img/4.jpg')}}"> </div>
                         <div class="sl-right">
                             <div class="font-medium">Go to the Doctor
                                 <span class="sl-date">5 minutes ago</span>
@@ -748,7 +753,7 @@
                     </div>
                     <div class="sl-item">
                         <div class="sl-left">
-                            <img class="rounded-circle" alt="user" src="{{url('/dashboard/img/6.jpg')}}"> </div>
+                            <img class="rounded-circle" alt="user" src="{{url('/dashboard_files/img/6.jpg')}}"> </div>
                         <div class="sl-right">
                             <div>
                                 <a href="javascript:void(0)">Stephen</a>
@@ -767,42 +772,43 @@
 <!-- ============================================================== -->
 <!-- All Jquery -->
 <!-- ============================================================== -->
-<script src="{{asset('dashboard/js/jquery.min.js')}}"></script>
+<script src="{{asset('dashboard_files/js/jquery.min.js')}}"></script>
 <!-- Bootstrap tether Core JavaScript -->
-<script src="{{asset('dashboard/js/popper.min.js')}}"></script>
-<script src="{{asset('dashboard/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('dashboard_files/js/popper.min.js')}}"></script>
+<script src="{{asset('dashboard_files/js/bootstrap.min.js')}}"></script>
 <!-- apps -->
-<script src="{{asset('dashboard/js/app.min.js')}}"></script>
-<script src="{{asset('dashboard/js/app.init.js')}}"></script>
-<script src="{{asset('dashboard/js/app-style-switcher.js')}}"></script>
+<script src="{{asset('dashboard_files/js/app.min.js')}}"></script>
+<script src="{{asset('dashboard_files/js/app.init.js')}}"></script>
+<script src="{{asset('dashboard_files/js/app-style-switcher.js')}}"></script>
 <!-- slimscrollbar scrollbar JavaScript -->
-<script src="{{asset('dashboard/js/perfect-scrollbar.jquery.min.js')}}"></script>
-<script src="{{asset('dashboard/js/sparkline.js')}}"></script>
+<script src="{{asset('dashboard_files/js/perfect-scrollbar.jquery.min.js')}}"></script>
+<script src="{{asset('dashboard_files/js/sparkline.js')}}"></script>
 <!--Wave Effects -->
-<script src="{{asset('dashboard/js/waves.js')}}"></script>
+<script src="{{asset('dashboard_files/js/waves.js')}}"></script>
 <!--Menu sidebar -->
-<script src="{{asset('dashboard/js/sidebarmenu.js')}}"></script>
+<script src="{{asset('dashboard_files/js/sidebarmenu.js')}}"></script>
 <!--Custom JavaScript -->
-<script src="{{asset('dashboard/js/custom.min.js')}}"></script>
+<script src="{{asset('dashboard_files/js/custom.min.js')}}"></script>
 <!--This page JavaScript -->
 <!--chartis chart-->
-<script src="{{asset('dashboard/js/chartist.min.js')}}"></script>
-<script src="{{asset('dashboard/js/chartist-plugin-tooltip.min.js')}}"></script>
+<script src="{{asset('dashboard_files/js/chartist.min.js')}}"></script>
+<script src="{{asset('dashboard_files/js/chartist-plugin-tooltip.min.js')}}"></script>
 <!--c3 charts -->
-<script src="{{asset('dashboard/js/d3.min.js')}}"></script>
-<script src="{{asset('dashboard/js/c3.min.js')}}"></script>
+<script src="{{asset('dashboard_files/js/d3.min.js')}}"></script>
+<script src="{{asset('dashboard_files/js/c3.min.js')}}"></script>
 <!--chartjs -->
-<script src="{{asset('dashboard/js/raphael.min.js')}}"></script>
-<script src="{{asset('dashboard/js/morris.min.js')}}"></script>
+<script src="{{asset('dashboard_files/js/raphael.min.js')}}"></script>
+<script src="{{asset('dashboard_files/js/morris.min.js')}}"></script>
 
-<script src="{{asset('dashboard/js/dashboard1.js')}}"></script>
-{{--<script src="{{asset('dashboard/ckeditor/config.js')}}"></script>--}}
-<script src="{{asset('dashboard/ckeditor/ckeditor.js')}}"></script>
-<script src="{{asset('dashboard/ckeditor/translations/ar.js')}}"></script>
-<script src="{{asset('dashboard/js/site-custom.js')}}"></script>
-<script src="{{asset('dashboard/js/image-preview.js')}}"></script>
-<script src="{{asset('dashboard/jquery-number-master/jquery.number.js')}}"></script>
-<script src="{{asset('dashboard/js/printThis.js')}}"></script>
+<script src="{{asset('dashboard_files/js/dashboard1.js')}}"></script>
+{{--<script src="{{asset('dashboard_files/ckeditor/config.js')}}"></script>--}}
+<script src="{{asset('dashboard_files/ckeditor/ckeditor.js')}}"></script>
+<script src="{{asset('dashboard_files/ckeditor/translations/ar.js')}}"></script>
+<script src="{{asset('dashboard_files/js/site-custom.js')}}"></script>
+<script src="{{asset('dashboard_files/js/image-preview.js')}}"></script>
+<script src="{{asset('dashboard_files/jquery-number-master/jquery.number.js')}}"></script>
+<script src="{{asset('dashboard_files/js/printThis.js')}}"></script>
+<script src="{{asset('js/tui-image-editor.js')}}"></script>
 <script>
     $(document).ready(function () {
         $('.sidebar-menu').tree();
@@ -838,6 +844,7 @@
     });//end of ready
 
 </script>
+
 @include('sweetalert::alert')
 @yield('jsFooter')
 </body>

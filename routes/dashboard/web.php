@@ -19,9 +19,10 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]], function(){
 
             Route::prefix('dashboard')->name('dashboard.')->middleware('auth')->group(function(){
-                Route::get('/index' ,'DashboardController@index')->name('index');
+                Route::get('/' ,'DashboardController@index')->name('welcome');
                 Route::resource('users' ,'UserController')->except('show');
                 Route::resource('categories' ,'CategoryController')->except('show');
+                Route::get('categories/image','CategoryController@image_editor');
                 Route::resource('products' ,'ProductController')->except('show');
                 Route::resource('clients' ,'ClientController')->except('show');
                 Route::resource('clients.orders' ,'Client\OrderController')->except('show');

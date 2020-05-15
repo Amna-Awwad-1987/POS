@@ -16,7 +16,7 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">
-                                <a href="{{route('dashboard.index')}}">{{__('site.dashboard')}}</a>
+                                <a href="{{route('dashboard.welcome')}}">{{__('site.dashboard')}}</a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">{{__('site.orders')}}</li>
                         </ol>

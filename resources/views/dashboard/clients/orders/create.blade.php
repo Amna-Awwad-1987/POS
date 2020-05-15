@@ -16,7 +16,7 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">
-                                <a href="{{route('dashboard.index')}}">{{__('site.dashboard')}}</a>
+                                <a href="{{route('dashboard.welcome')}}">{{__('site.dashboard')}}</a>
                             </li>
                             <li class="breadcrumb-item">
                                 <a href="{{route('dashboard.clients.index')}}">{{__('site.clients')}}</a>
@@ -54,7 +54,7 @@
                                                             <thead class="font-weight-bolder ">
                                                                 <tr>
                                                                     <th>{{__('site.name')}}</th>
-                                                                    <th>{{__('site.sale_price')}}</th>
+                                                                    <th>{{__('site.sale_price')}} $</th>
                                                                     <th>{{__('site.stock')}}</th>
                                                                     <th>{{__('site.add')}}</th>
                                                                 </tr>
@@ -64,7 +64,7 @@
                                                                     @if($product->stock >0 )
                                                                         <tr>
                                                                         <td>{{$product->name}}</td>
-                                                                        <td>{{$product->sale_price}} $</td>
+                                                                        <td>{{$product->sale_price}} </td>
                                                                         <td class="check-stock" data-id ="{{$product->id}}" data-stock="{{$product->stock}}">{{$product->stock}}</td>
                                                                         @if(auth()->user()->hasPermission('create_orders'))
                                                                         <td>
@@ -151,7 +151,7 @@
                                 @foreach($orders as $order)
                                     <div class="card" >
                                         <div class="card-actions bg-light-success" >
-                                            <a class="font-18" data-action="collapse" >{{$order->created_at->toFormattedDateString()}}<i class="ti-plus"></i> </a>
+                                            <a class="font-18" data-action="collapse" >{{$order->created_at->toFormattedDateString()}}<i class="ti-minus"></i> </a>
                                         </div>
                                         <div class="card-body collapse">
                                             @if($order->products->count()>0)
@@ -169,11 +169,12 @@
                                                         @foreach($order->products as $product)
                                                                 <tr>
                                                                     <td>{{$product->name}}</td>
-                                                                    <td>{{number_format($product->sale_price , 2)}} $</td>
-                                                                    <td>{{$product->pivot->quantity}} $</td>
-                                                                    <td>{{number_format($product->sale_price *$product->pivot->quantity,2)}} $</td>
+                                                                    <td>{{number_format($product->sale_price , 2)}} </td>
+                                                                    <td>{{$product->pivot->quantity}} </td>
+                                                                    <td>{{number_format($product->sale_price *$product->pivot->quantity,2)}} </td>
                                                                 </tr>
                                                         @endforeach
+                                                        <div class=" pagination pagination-md m-0  float-left">{{$orders->appends(request()->query())->links()}}</div>
                                                         </tbody>
                                                     </table>
                                                     <div class="card-footer bg-light-success font-16">
